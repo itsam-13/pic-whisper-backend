@@ -18,7 +18,7 @@ async function registerController(req, res) {
     }
 
     const user = await userModel.create({
-        username, 
+        username,
         password: await bcrypt.hash(password, 10)
     })
 
@@ -49,12 +49,10 @@ async function loginController(req, res) {
         })
     }
 
-    const isPassword = password === User.password
+    const isPassword = await bcrypt.compare(password, User.password)
 
     if (!isPassword) {
-        return res.status(400).json({
-            message: "Invalid Password!",
-        })
+        return res.status(400).json({ message: "Invalid Password!", })
     }
 
     const token = jwt.sign({
