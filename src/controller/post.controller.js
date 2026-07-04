@@ -10,6 +10,10 @@ async function createPostController(req, res) {
 
     console.log("Generated caption", caption);
 
+    res.json({
+        caption
+    })
+
 }
 
 
