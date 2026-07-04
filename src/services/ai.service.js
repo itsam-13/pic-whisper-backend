@@ -3,14 +3,14 @@ const { GoogleGenAI } = require('@google/genai');
 // Initializes the client. It automatically picks up process.env.GEMINI_API_KEY from your .env file.
 const ai = new GoogleGenAI({});
 
-async function generateCaption(base64ImageFile) {
+async function generateCaption(base64ImageFile, mimeType = 'image/jpeg') {
     try {
         const contents = [
             "Caption this image.",
             {
                 inlineData: {
                     data: base64ImageFile,
-                    mimeType: "image/jpeg"
+                    mimeType
                 }
             }
         ];
