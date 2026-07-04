@@ -52,7 +52,7 @@ async function loginController(req, res) {
     const isPassword = await bcrypt.compare(password, User.password)
 
     if (!isPassword) {
-        return res.status(400).json({ message: "Invalid Password!", })
+        return res.status(400).json({ message: "Invalid Password!",  })
     }
 
     const token = jwt.sign({
