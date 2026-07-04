@@ -121,9 +121,3 @@ The server listens on port `3000` by default.
 - `ImageKit upload failed`: verify your `IMAGEKIT_PUBLIC_KEY`, `IMAGEKIT_PRIVATE_KEY`, and `IMAGEKIT_URL_ENDPOINT`
 - `MongoDB connection error`: verify `MONGODB_URL`
 
-## Future improvements
-
-- Add post listing and retrieval endpoints
-- Add validation for image file type and size
-- Add logout endpoint
-- Add unit/integration tests
